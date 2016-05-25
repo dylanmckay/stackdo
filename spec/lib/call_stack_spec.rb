@@ -6,6 +6,7 @@ describe Stackdo::CallStack do
       frames: [
         Stackdo::Frame.new(
           location: Stackdo::Location.new("bob.rs", 32),
+          method_reference: Stackdo::MethodReference.new(Kernel, :eval),
           environment: Stackdo::Environment.new(
             variables: [
               Stackdo::Variable.new("str", "hello world")
