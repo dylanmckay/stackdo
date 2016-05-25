@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 
-require_relative '../lib/exception'
+require_relative '../lib/stackdo'
 
 stack = Stackdo::CallStack.from_here
 
