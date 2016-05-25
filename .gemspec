@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'stackdo'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.licenses    = ['MIT']
   s.summary     = "Advanced call stack retrieval"
   s.description = <<END
@@ -10,5 +10,7 @@ END
   s.email       = 'dylanmckay34@gmail.com'
   s.files       = ["lib/stackdo.rb"]
   s.homepage    = 'https://github.com/dylanmckay/stackdo'
+
+  s.add_runtime_dependency 'binding_of_caller', '~> 0.7.2', '>= 0.7.2'
 end
 
