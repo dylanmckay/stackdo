@@ -6,9 +6,10 @@ stack = Stackdo::CallStack.from_here
 
 stack.walk do |frame|
   puts "#{frame.location}"
+  puts "#{frame.method_reference}"
 
   frame.environment.variables.each do |variable|
-    puts "#{variable.name} = #{variable.value.to_s}"
+    puts "#{variable.name} = #{variable.value || 'nil'}"
   end
 
   puts

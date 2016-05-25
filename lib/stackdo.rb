@@ -1,9 +1,22 @@
 require 'binding_of_caller'
 
 module Stackdo
+  class Error < StandardError; end
+
   class Location < Struct.new(:file, :line)
     def to_s
       "#{file}:#{line}"
+    end
+  end
+
+  class MethodReference < Struct.new(:receiver, :name)
+    def to_s
+      case receiver
+      when Module then "#{receiver}.#{name}"
+      when Class then "#{receiver}##{name}"
+      else
+        receiver.to_s
+      end
     end
   end
 
@@ -35,20 +48,23 @@ module Stackdo
   end
 
   class Frame
-    attr_reader :location, :environment
+    attr_reader :location, :method_reference, :environment
 
     def self.from_binding(binding)
       file = binding.eval("__FILE__")
       line = binding.eval("__LINE__")
+      method_name = binding.eval("__method__")
 
       Stackdo::Frame.new(
         location: Location.new(file, line),
+        method_reference: MethodReference.new(binding.receiver, method_name),
         environment: Environment.from_binding(binding)
       )
     end
 
-    def initialize(location:, environment:)
+    def initialize(location:, method_reference:, environment:)
       @location = location
+      @method_reference = method_reference
       @environment = environment
     end
   end
