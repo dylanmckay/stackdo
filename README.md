@@ -1,6 +1,7 @@
 # Stackdo
 
 [![Build Status](https://travis-ci.org/dylanmckay/stackdo.svg?branch=master)](https://travis-ci.org/dylanmckay/stackdo)
+[![Gem Version](https://badge.fury.io/rb/stackdo.svg)](https://badge.fury.io/rb/stackdo)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 Get stacktraces and the variables within.
