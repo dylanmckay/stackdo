@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'stackdo'
-  s.version     = '0.0.3'
+  s.version     = '0.0.4'
   s.licenses    = ['MIT']
   s.summary     = "Advanced call stack retrieval"
   s.description = <<END
