@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
 A library for getting detailed stacktraces (with variables).
 END
   s.authors     = ["Dylan McKay"]
-  s.email       = 'dylanmckay34@gmail.com'
+  s.email       = 'me@dylanmckay.io'
   s.files       = ["lib/stackdo.rb"]
   s.homepage    = 'https://github.com/dylanmckay/stackdo'
 
